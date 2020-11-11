@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit</title>
+</head>
+
+<body>
+    <script>
+        let sum = prompt(`Please enter the sum of credit`, 100);
+        let term = prompt(`Please enter the term of credit in monthes`, 12);
+        let interest = prompt(`Please enter the annual interest of credit`, 33);
+
+        interest = interest / 100;
+
+        function calculateMonthlyPay(sum, term, interest) {
+            return sum * ((interest / 12) * (1 + interest / 12) ** term) /
+                ((1 + interest / 12) ** term - 1)
+        }
+        let monthlyPay = calculateMonthlyPay(sum, term, interest)
+
+        let overpaySum = monthlyPay * term - sum;
+
+        alert(`Your total overpay is ${overpaySum}`);
+    </script>
+
+</body>
+
+</html>

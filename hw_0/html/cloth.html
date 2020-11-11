@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clothes</title>
+</head>
+
+<body>
+    <script>
+        let input = prompt(`Please enter clothes item, size and color separated by comma`, );
+        let createCloth = input.split(',');
+        let userCloth = createCloth[0];
+        let userSize = createCloth[1];
+        let userColor = createCloth[2];
+        let cloth = {
+            name: userCloth,
+            size: userSize,
+            color: userColor,
+        };
+    </script>
+
+</body>
+
+</html>
