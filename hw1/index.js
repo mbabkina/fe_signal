@@ -65,7 +65,7 @@ document.writeln(
     The average rouded price is ${averageRoundedPrice}.<br \/>
     <br \/>
     <br \/>
-    The discount is ${discount}, so the total sum will be ${totalDiscountedSum}<br \/>
+    The discount is ${discount*100}%, so the total sum will be ${totalDiscountedSum}<br \/>
     The net profit is ${netProfit}.
     `
 )
