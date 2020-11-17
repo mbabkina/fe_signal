@@ -4,8 +4,8 @@ let numberEndWith = prompt('Please enter integer, which marks the end point of c
 
 const skipEven = confirm('Do you want to skip even numbers?');
 
-N = parseInt(numberStartFrom, 10);
-M = parseInt(numberEndWith, 10);
+numberStartFrom = parseInt(numberStartFrom, 10);
+numberEndWith = parseInt(numberEndWith, 10);
 
 let result = null;
 
@@ -20,4 +20,4 @@ for (let i = numberStartFrom; !(isNaN(numberStartFrom)) && !(isNaN(numberEndWith
     }
 }
 
-alert(result ? result : 'Please check your inputs');
+document.writeln(`The sum is: ${result ? result : 'Please check your inputs'}`);
