@@ -2,15 +2,15 @@ const priceApple = 15.678;
 const priceOrange = 123.965;
 const pricePear = 90.2345;
 
-let totalSum = priceApple +
+const totalSum = priceApple +
     priceOrange +
     pricePear;
 
-let totalCentOffPrice = Math.floor(priceApple) +
+const totalCentOffPrice = Math.floor(priceApple) +
     Math.floor(priceOrange) +
     Math.floor(pricePear);
 
-let totalRounded100Amount = roundTo10(totalSum, 2);
+const totalRounded100Amount = roundTo10(totalSum, 2);
 
 let totalAmountEven;
 
@@ -25,12 +25,14 @@ if (Math.floor(totalSum) % 2 > 0) {
     totalAmountEven = true
 }
 
-let changeSum = roundToDecimal((500 - totalSum), 2);
-let averagePrice = (priceApple +
+const customerSum = 500;
+
+const changeSum = roundToDecimal((customerSum - totalSum), 2);
+const averagePrice = (priceApple +
     priceOrange +
     pricePear) / 3;
 
-let averageRoundedPrice = roundToDecimal(averagePrice, 1);
+const averageRoundedPrice = roundToDecimal(averagePrice, 1);
 
 function roundToDecimal(number, digit) {
     if (digit >= 0) {
@@ -38,9 +40,9 @@ function roundToDecimal(number, digit) {
     }
 }
 
-let discount = roundToDecimal(Math.random(), 2);
+const discount = roundToDecimal(Math.random(), 2);
 
-let totalDiscountedSum = roundToDecimal(totalSum * (1 - discount), 2)
+const totalDiscountedSum = roundToDecimal(totalSum * (1 - discount), 2)
 
 let netProfit = roundToDecimal(totalSum, 2) / 2 -
     roundToDecimal(totalSum * discount, 2);
