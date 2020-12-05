@@ -1,60 +1,53 @@
-const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій", "Світлана"];
-const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
-const marks = [4, 5, 5, 3, 4, 5];
+const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій", "Світлана"]
+const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"]
+const marks = [4, 5, 5, 3, 4, 5]
 
 const studentsPaired = (array) => {
-    const pairs = [];
-    const arrayPaired = [];
-    while (array.length % 2 !== 0) alert('Students number is odd, please make sure you have even number');
+    const pairs = []
+    const arrayPaired = []
+    while (array.length % 2 !== 0) alert('Students number is odd, please make sure you have even number')
 
     for (i = 0; i < (array.length / 2); i++) {
-        pairs.push(array[i], array[array.length - i - 1]);
-        arrayPaired[i] = [...pairs];
-        pairs.splice(0);
-
+        pairs.push(array[i], array[array.length - i - 1])
+        arrayPaired[i] = [...pairs]
+        pairs.splice(0)
     }
 
-    return arrayPaired;
+    return arrayPaired
 }
 
 const themesMappedToPairs = (arrayPairs, arrayThemes) => {
-    while (arrayPairs.length > arrayThemes.length) alert('You have more students pairs than themes. Please add the theme.');
-    const themesMapped = [];
-    const pair = [];
+    while (arrayPairs.length > arrayThemes.length) alert('You have more students pairs than themes. Please add the theme.')
+    const themesMapped = []
+    const pair = []
 
     for (i = 0; i < arrayPairs.length; i++) {
-        pair[i] = arrayPairs[i].join(' і ');
-        themesMapped[i] = [pair[i], arrayThemes[i]];
+        pair[i] = arrayPairs[i].join(' і ')
+        themesMapped[i] = [pair[i], arrayThemes[i]]
     }
 
-    return themesMapped;
+    return themesMapped
 }
 
 const marksMappedToStudents = (arrayStudents, arrayMarks) => {
-    while (arrayStudents.length > arrayMarks.length) alert('You have more students than marks. Please check inputs.');
-    while (arrayStudents.length < arrayMarks.length) alert('You have more marks than students . Please move inputs.');
-    const marksMapped = [];
+    while (arrayStudents.length > arrayMarks.length) alert('You have more students than marks. Please check inputs.')
+    while (arrayStudents.length < arrayMarks.length) alert('You have more marks than students . Please move inputs.')
+    const marksMapped = []
 
     for (i = 0; i < arrayMarks.length; i++) {
-        marksMapped[i] = [arrayStudents[i], arrayMarks[i]];
+        marksMapped[i] = [arrayStudents[i], arrayMarks[i]]
     }
 
-    return marksMapped;
+    return marksMapped
 }
 
-const randomIntegerInRange = function getRandomNumber(n, m) {
-    return Math.round(n + Math.random() * m)
-}
+const getRandomIntegerInRange = (startNumber, endNumber) => Math.round(startNumber + Math.random() * endNumber)
 
-const randomThemeMarksMappedToPairs = (arrayThemesPairs) => {
-    const result = [];
+const randomThemeMarksMappedToPairs = (arrayThemesPairs) => arrayThemesPairs.map((pair) => {
+    pair = [pair, getRandomIntegerInRange(1, 4)]
+    return pair
+})
 
-    for (i = 0; i < arrayThemesPairs.length; i++) {
-        result[i] = [arrayThemesPairs[i], randomIntegerInRange(1, 4)]
-    }
-
-    return result;
-}
 
 
 
