@@ -18,27 +18,20 @@ const studentsPaired = (array) => {
 
 const themesMappedToPairs = (arrayPairs, arrayThemes) => {
     while (arrayPairs.length > arrayThemes.length) alert('You have more students pairs than themes. Please add the theme.')
-    const themesMapped = []
-    const pair = []
 
-    for (i = 0; i < arrayPairs.length; i++) {
-        pair[i] = arrayPairs[i].join(' і ')
-        themesMapped[i] = [pair[i], arrayThemes[i]]
-    }
-
-    return themesMapped
+    let length;
+    (arrayPairs.length > arrayThemes.length) ? length = arrayThemes.length: length = arrayPairs.length
+    return Array.from({ length: length }).map((el, index) => el = [arrayPairs[index], arrayThemes[index]])
 }
 
 const marksMappedToStudents = (arrayStudents, arrayMarks) => {
     while (arrayStudents.length > arrayMarks.length) alert('You have more students than marks. Please check inputs.')
     while (arrayStudents.length < arrayMarks.length) alert('You have more marks than students . Please move inputs.')
-    const marksMapped = []
 
-    for (i = 0; i < arrayMarks.length; i++) {
-        marksMapped[i] = [arrayStudents[i], arrayMarks[i]]
-    }
+    let length;
+    (arrayStudents.length > arrayMarks.length) ? length = arrayMarks.length: length = arrayStudents.length
+    return Array.from({ length: length }).map((el, index) => el = [arrayStudents[index], arrayMarks[index]])
 
-    return marksMapped
 }
 
 const getRandomIntegerInRange = (startNumber, endNumber) => Math.round(startNumber + Math.random() * endNumber)
