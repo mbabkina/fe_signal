@@ -21,13 +21,15 @@ function makeVisible() {
 function randomColor() {
     let color = Array.from({ length: 6 },
         el => (9 * Math.random()).toFixed()).join('')
-    return `'#${color}'`
+    return `#${color}`
 }
 
 function addColors() {
-    for (let i = 0; i < container.children.length; i++) {
-        container.children[i].style.background = randomColor()
-    }
+    setInterval(function() {
+        for (let i = 0; i < container.children.length; i++) {
+            container.children[i].style.background = randomColor()
+        }
+    }, 1000)
 }
 
 getSquares.addEventListener('click', makeVisible)
