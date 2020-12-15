@@ -1,12 +1,12 @@
 let keysSounds = {
-    p: 'piano',
-    g: 'guitar',
-    d: 'drum',
-    c: 'conga_tap',
-    b: 'cymbal',
-    l: 'shake',
-    h: 'synt_down',
-    m: 'synt_up',
+    KeyP: 'piano',
+    KeyG: 'guitar',
+    KeyD: 'drum',
+    KeyC: 'conga_tap',
+    KeyB: 'cymbal',
+    KeyL: 'shake',
+    KeyH: 'synt_down',
+    KeyM: 'synt_up',
 }
 
 document.querySelector('.button-wrapper').addEventListener('click', function(el) {
@@ -17,7 +17,7 @@ document.querySelector('.button-wrapper').addEventListener('click', function(el)
     }
 })
 
-document.onkeydown = function(el) {
-    let soundId = keysSounds[el.key];
+document.addEventListener('keydown', function(event) {
+    let soundId = keysSounds[event.code];
     if (soundId) document.getElementById(soundId).play()
-}
+})
