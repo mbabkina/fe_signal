@@ -27,9 +27,9 @@ const students = [{
 
 /* Function 1 - Subjects list for a student*/
 
-const getSubjects = (studentIndex) => Object.keys(students[studentIndex].subjects).map((s) => {
-    return (s[0].toUpperCase() + s.slice(1).toLowerCase().replace('_', ' '));
-});
+const getSubjects = (studentIndex) => Object.keys(students[studentIndex].subjects).map((s) =>
+    (s[0].toUpperCase() + s.slice(1).toLowerCase().replace('_', ' '))
+);
 
 console.log(getSubjects(0));
 
@@ -51,28 +51,18 @@ console.log(getAverageMark(0));
 
 /* Function 3 - Student info */
 
-const getStudentInfo = (studentIndex) => {
-    const infoObject = {
+const getStudentInfo = (studentIndex) =>
+    ({
         course: students[studentIndex].course,
         name: students[studentIndex].name,
         avrageMark: getAverageMark(studentIndex),
-    };
-
-    return infoObject;
-}
+    })
 
 console.log(getStudentInfo(2));
 
 /* Function 4 - Get name in alpabetical order */
 
-const getStudentsNames = (array) => {
-    const names = [];
-    array.forEach(student => {
-        names.push(student.name)
-    });
-
-    return names.sort()
-}
+const getStudentsNames = (array) => array.map(student => student = student.name).sort()
 
 console.log(getStudentsNames(students));
 
