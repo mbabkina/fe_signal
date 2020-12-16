@@ -23,20 +23,24 @@ console.log(getTotalTaxes.call(litva))
 
 /* Function 4 - Random salary */
 function getMySalary(country) {
-    let salary = +((1500 + Math.random() * 2000) * this.tax).toFixed(2)
-    let taxes = +(salary * this.tax).toFixed(2)
-    let profit = +(salary - taxes).toFixed(2)
+    let callCounter = 0
 
-    return {
-        salary: salary,
-        taxes: taxes,
-        profit: profit,
-    }
+    let callMySalary = setInterval(function() {
+
+        callCounter === 10 ? clearInterval(callMySalary) : (function() {
+            let salary = +((1500 + Math.random() * 2000) * country.tax).toFixed(2)
+            let taxes = +(salary * country.tax).toFixed(2)
+            let profit = +(salary - taxes).toFixed(2)
+
+            let result = {
+                salary,
+                taxes,
+                profit,
+            }
+            console.log(result)
+        })()
+        callCounter++
+    }, 10000)
 }
 
-let callCounter = 0
-
-let callMySalary = setInterval(function() {
-    callCounter === 10 ? clearInterval(callMySalary) : console.log(getMySalary.call(ukraine))
-    callCounter++
-}, 10000);
+getMySalary(ukraine)
