@@ -1,0 +1,36 @@
+body {
+    font-family: 'Langar', cursive;
+    position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-image: url(../img/bg_2.webp);
+    background-size: cover;
+}
+
+.planets-list {
+    height: auto;
+    width: 40%;
+    padding: 15px 25px;
+    color: rgb(4, 19, 19);
+    background-color: rgba(255, 250, 240, 0.479);
+    margin: 50px 30%
+}
+
+.planets-list li {
+    margin-top: 10px;
+}
+
+.to-main {
+    background-color: darkcyan;
+    margin-top: 20px;
+    position: absolute;
+    right: 10%;
+    bottom: -310px;
+    font-family: 'Langar', cursive;
+    border-radius: 10px;
+    padding: 5px
+}
+
+.to-main:hover {
+    color: darkred;
+}

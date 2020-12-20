@@ -1,0 +1,95 @@
+body {
+    font-family: 'Langar', cursive;
+    position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-image: url(../img/bg_1.webp);
+    background-size: cover;
+}
+
+.title {
+    margin: 50px 15%;
+    font-size: 64px;
+    font-weight: 700;
+    color: rgb(122, 90, 9);
+}
+
+button,
+.film-search,
+.search {
+    font-family: 'Langar', cursive;
+    border-radius: 10px;
+    padding: 5px
+}
+
+.search :hover {
+    border-radius: 10px;
+}
+
+.wookiee-translate {
+    background-color: burlywood;
+    margin-bottom: 20px;
+    margin-left: 85%;
+}
+
+.wookiee-translate:hover {
+    color: darkblue;
+}
+
+.to-planets {
+    background-color: darkcyan;
+    margin-top: 20px;
+    position: absolute;
+    right: 10%;
+    bottom: 10px;
+}
+
+.to-planets:hover,
+.film-search:hover {
+    color: darkred;
+}
+
+.films-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 60px;
+}
+
+.list-wrapper,
+.film-wrapper {
+    height: auto;
+    width: 40%;
+    padding: 15px 25px;
+    color: rgb(4, 19, 19);
+    background-color: rgba(255, 250, 240, 0.479);
+}
+
+.films-list {
+    list-style: decimal;
+}
+
+.films-list li,
+.personage-list li {
+    margin-top: 10px;
+}
+
+.sub-title {
+    margin: 5px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.film-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-wrapper {
+    margin: 10px 0;
+}
+
+.personage-list {
+    list-style: none;
+}
