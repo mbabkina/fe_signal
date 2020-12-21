@@ -26,15 +26,16 @@ button,
     border-radius: 10px;
 }
 
-.wookiee-translate {
+
+/* .wookiee-translate {
     background-color: burlywood;
     margin-bottom: 20px;
     margin-left: 85%;
 }
 
-.wookiee-translate:hover {
+.wookiee-translate:hover {'
     color: darkblue;
-}
+} */
 
 .to-planets {
     background-color: darkcyan;
