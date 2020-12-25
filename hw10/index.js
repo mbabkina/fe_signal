@@ -13,17 +13,19 @@ const soundsList = Object.values(keysSounds)
 const stopAudio = () => soundsList.forEach((sound) => document.getElementById(sound).pause())
 
 document.querySelector('.button-wrapper').addEventListener('click', function(el) {
-    stopAudio()
 
     if (el.target.closest('button')) {
         let soundId = keysSounds[el.target.id]
+        stopAudio()
+        document.getElementById(soundId).currentTime = 0
         if (soundId) document.getElementById(soundId).play()
 
     }
 })
 
 document.addEventListener('keydown', function(event) {
-    stopAudio()
     let soundId = keysSounds[event.code]
+    stopAudio()
+    document.getElementById(soundId).currentTime = 0
     if (soundId) document.getElementById(soundId).play()
 })
